@@ -1,11 +1,10 @@
 const express = require('express')
 const line = require('@line/bot-sdk')
 const PORT = process.env.PORT || 3000
-const lineConfig = require('./line.config.js').line
 
 const config = {
-  channelAccessToken: lineConfig.accessToken,
-  channelSecret: lineConfig.channelSecret
+  channelAccessToken: process.env.LINE_ACCESS_TOKEN,
+  channelSecret: process.env.LINE_CHANNEL_SECRET
 }
 
 const app = express()
